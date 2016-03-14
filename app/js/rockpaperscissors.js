@@ -41,8 +41,35 @@ function getWinner(playerMove,computerMove) {
     // Assume that the only values playerMove and computerMove can have are 'rock', 'paper', and 'scissors'.
     // The rules of the game are that 'rock' beats 'scissors', 'scissors' beats 'paper', and 'paper' beats 'rock'.
     /* YOUR CODE HERE */
+    var playerMove = getPlayerMove();
+	var computerMove = getComputerMove();
+	if (playerMove === 'rock' && computerMove === 'scissors'){
+		winner = 'player';
+	} else if (playerMove === 'rock' && computerMove === 'paper'){
+		winner = 'computer';
+	} else if (playerMove === 'paper' && computerMove === 'rock'){
+		winner = 'computer';
+	} else if (playerMove === 'paper' && computerMove === 'scissors'){
+		winner = 'computer';
+	} else if (playerMove === 'scissors' && computerMove === 'rock'){
+		winner = 'player';
+	} else if (playerMove === 'scissors' && computerMove === 'paper'){
+		winner = 'player';
+    } else {
+        winner = 'tie'
+    }
+
     return winner;
 }
+
+// Do I need to define the variables? 
+/*  var playerMove;
+    var computerMove;
+OR:
+    var playerMove = getPlayerMove();
+	var computerMove = getComputerMove();
+Or:
+	var playerMove = ('rock' || 'paper' || 'scissors')  */
 
 function playToFive() {
     console.log("Let's play Rock, Paper, Scissors");
