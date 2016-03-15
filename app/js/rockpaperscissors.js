@@ -58,43 +58,6 @@ return winner;
 }
 
 
-
-
-
-
-
-
-
-
-	/* if (playerMove === computerMove) {
-		winner = 'tie';
-	} else if (playerMove === 'rock' && computerMove === 'scissors'){
-		winner = 'player';
-	} else if (playerMove === 'rock' && computerMove === 'paper'){
-		winner = 'computer';
-	} else if (playerMove === 'paper' && computerMove === 'rock'){
-		winner = 'computer';
-	} else if (playerMove === 'paper' && computerMove === 'scissors'){
-		winner = 'computer';
-	} else if (playerMove === 'scissors' && computerMove === 'rock'){
-		winner = 'player';
-	} else if (playerMove === 'scissors' && computerMove === 'paper'){
-		winner = 'player';
-    }
-
-    return winner;
-} */
-
-// Do I need to define the variables? 
-/*  var playerMove;
-    var computerMove;
-OR:
-    var playerMove = getPlayerMove();
-	var computerMove = getComputerMove();
-Or:
-	var playerMove = ('rock' || 'paper' || 'scissors')  
-
-
 function playToFive() {
     console.log("Let's play Rock, Paper, Scissors");
     var playerWins = 0;
@@ -105,30 +68,29 @@ function playToFive() {
   	// For example,
   	//  console.log('Player chose ' + playerMove + ' while Computer chose ' + computerMove);
  	 //  console.log('The score is currently ' + playerWins + ' to ' + computerWins + '\n')
-while (playerWins < 5 && computerWins < 5){
-    var playerMove = getPlayerMove();
-    var computerMove = getComputerMove();
-    var winner = getWinner(playerMove,computerMove);
 
-    if (winner === 'player'){
-        playerWins =+ 1;
-    console.log('player played ' + playerMove + 'while computer played ' + computerMove)
-    console.log('player win count is ' + playerWins)
-    }
-    else if (winner === 'computer'){
-        computerWins = +1;
-    console.log('player played '; + playerMove + 'while computer played ' + computerMove)
-    console.log('computer win count is ' + computerWins)
-    }
-    else {
-        computerWins =+ 0;
-        playerWins =+ 0;
-    console.log('player played ' + playerMove 'while computer played ' + computerMove + ', therefore a tie')
-    }
+while (playerWins < 5 && computerWins < 5){
+	var playerMove = getPlayerMove();
+	var computerMove = getComputerMove();
+	var winner = getWinner(playerMove,computerMove);
+
+	if (winner === 'player'){
+		playerWins =+ 1;
+	console.log('Player wins! Player played ' + playerMove + ' while Computer played ' + computerMove)
+	console.log('Player win count is ' + playerWins)
+	}
+	else if (winner === 'computer'){
+		computerWins = +1;
+	console.log('Computer wins! Computer played ' + computerMove + ' while player played ' + playerMove)
+	console.log('Computer win count is ' + computerWins)
+	}
+	else {
+		computerWins =+ 0;
+		playerWins =+ 0;
+	console.log('Player played ' + playerMove + ' while computer played ' + computerMove + ' therefore a tie')
+	}
 
     return [playerWins, computerWins];
 
 }
 }
-*/
-
