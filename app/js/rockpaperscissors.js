@@ -42,21 +42,21 @@ function getWinner(playerMove,computerMove) {
     // The rules of the game are that 'rock' beats 'scissors', 'scissors' beats 'paper', and 'paper' beats 'rock'.
     var playerMove = getPlayerMove();
     var computerMove = getComputerMove();
-    /* TO TROUBLESHOOT ADD: console.log('Player move = ' + playerMove + '; Computer Move = ' + computerMove); */
+    console.log('Player move = ' + playerMove + '; Computer Move = ' + computerMove);
 
 
     if (playerMove === computerMove){
         return 'tie';
-    } else if  ((playerMove === 'rock' && computerMove === 'scissors') || (playerMove === 'paper' && computerMove === 'rock') || (playerMove === 'paper' && computerMove === 'scissors'))  {
+    } else if  ((playerMove === 'rock' && computerMove === 'scissors') || (playerMove === 'scissors' & computerMove === 'paper') || (playerMove === 'paper' && computerMove === 'rock'))  {
         return 'player';
-    } else if ((playerMove === 'rock' && computerMove === 'paper') || (playerMove === 'scissors' & computerMove === 'paper') || (playerMove === 'scissors' && computerMove === 'rock')) {
+    } else if ((playerMove === 'rock' && computerMove === 'paper') || (playerMove === 'scissors' && computerMove === 'rock') || (playerMove === 'paper' && computerMove === 'scissors')) {
         return 'computer';
     }
 }
 
 
 function playToFive() {
-    console.log("Let's play Rock, Paper, Scissors");
+    console.log("Let's play Rock, Paper, Scissors!");
     var playerWins = 0;
     var computerWins = 0;
     // Write code that plays 'Rock, Paper, Scissors' until either the player or the computer has won five times.
@@ -67,25 +67,40 @@ function playToFive() {
  	 //  console.log('The score is currently ' + playerWins + ' to ' + computerWins + '\n')
 
 while (playerWins < 5 && computerWins < 5) {
-	var playerMove = getPlayerMove();
-	var computerMove = getComputerMove();
-	var winner = getWinner(PlayerMove,ComputerMove);
+	var playerMove;
+	var computerMove;
+	var winner = getWinner(playerMove,computerMove);
 
 	if (winner === 'player') {
 		playerWins ++;
-	console.log('Player wins! Player played ' + playerMove + ' while Computer played ' + computerMove);
-	console.log('Player win count is ' + playerWins);
+	console.log('Player wins!');
+	console.log('SCOREBOARD Player: ' + playerWins + ' Computer: ' + computerWins);
 	}
 	else if (winner === 'computer') {
 		computerWins ++;
-	console.log('Computer wins! Computer played ' + computerMove + ' while Player played ' + playerMove);
-	console.log('Computer win count is ' + computerWins);
+	console.log('Computer wins!');
+	console.log('SCOREBOARD Player: ' + playerWins + ' Computer: ' + computerWins);
 	}
 	else {
-	console.log('Player played ' + playerMove + ' while computer played ' + computerMove + ' therefore a tie');
+	console.log('Tie game.');
 	}
 }
 
     return [playerWins, computerWins];
 
 }
+
+/* 
+WITH:   var playerMove = getPlayerMove();
+        var computerMove = getComputerMove();
+
+Requires TWO inputs from Player. The winner is determined by the result of the second one, but the console log is printing the first one. WEIRD. 
+
+WITH:   var playerMove;
+        var computerMove;
+
+ONLY ONE INPUT IS REQUIRED! And the winner is determined by the initial pick per my testing the console log in getWinner. 
+However, still getting an undefined in the consoles. Removing them because they are lies! 
+*/
+
+
