@@ -89,18 +89,3 @@ while (playerWins < 5 && computerWins < 5) {
     return [playerWins, computerWins];
 
 }
-
-/* 
-WITH:   var playerMove = getPlayerMove();
-        var computerMove = getComputerMove();
-
-Requires TWO inputs from Player. The winner is determined by the result of the second one, but the console log is printing the first one. WEIRD. 
-
-WITH:   var playerMove;
-        var computerMove;
-
-ONLY ONE INPUT IS REQUIRED! And the winner is determined by the initial pick per my testing the console log in getWinner. 
-However, still getting an undefined in the consoles. Removing them because they are lies! 
-*/
-
-
